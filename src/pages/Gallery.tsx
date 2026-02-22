@@ -3,15 +3,24 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 
+import gallery1 from "@/assets/gallery/gallery-1.jpg";
+import gallery2 from "@/assets/gallery/gallery-2.jpg";
+import gallery3 from "@/assets/gallery/gallery-3.jpg";
+import gallery4 from "@/assets/gallery/gallery-4.jpg";
+import gallery5 from "@/assets/gallery/gallery-5.jpg";
+import gallery6 from "@/assets/gallery/gallery-6.jpg";
+import gallery7 from "@/assets/gallery/gallery-7.jpg";
+import gallery8 from "@/assets/gallery/gallery-8.jpg";
+
 const galleryImages = [
-  { caption: "Full exterior detail on a luxury sedan — Houston, TX", alt: "Full exterior auto detail Houston TX" },
-  { caption: "Interior deep clean and conditioning — Greater Houston area", alt: "Interior car detailing Houston" },
-  { caption: "Ceramic coating application with mirror finish — Houston", alt: "Ceramic coating Houston TX" },
-  { caption: "Paint correction removing swirl marks — HZ Details Houston", alt: "Paint correction Houston" },
-  { caption: "Premium wax application for deep gloss — Houston TX", alt: "Car waxing service Houston" },
-  { caption: "Engine bay detailing — professional results in Houston", alt: "Engine detailing Houston TX" },
-  { caption: "Before and after paint correction — Houston vehicle", alt: "Before after paint correction Houston" },
-  { caption: "Leather conditioning and interior restoration — HZ Details", alt: "Leather conditioning auto detail Houston" },
+  { src: gallery1, caption: "Full exterior detail — hand polishing to a mirror finish", alt: "Full exterior auto detail Houston TX" },
+  { src: gallery2, caption: "Interior deep clean — pristine leather conditioning", alt: "Interior car detailing Houston" },
+  { src: gallery3, caption: "Ceramic coating application on a red sports car", alt: "Ceramic coating Houston TX" },
+  { src: gallery4, caption: "Paint correction — before & after swirl removal", alt: "Paint correction Houston TX" },
+  { src: gallery5, caption: "Premium wax application on white luxury SUV", alt: "Car waxing service Houston" },
+  { src: gallery6, caption: "Engine bay detailing — professional results", alt: "Engine detailing Houston TX" },
+  { src: gallery7, caption: "Before and after full paint restoration", alt: "Before after paint correction Houston" },
+  { src: gallery8, caption: "Leather interior restoration — like-new condition", alt: "Leather conditioning auto detail Houston" },
 ];
 
 const Gallery = () => {
@@ -39,10 +48,15 @@ const Gallery = () => {
               <ScrollReveal key={i} delay={i * 0.05}>
                 <button
                   onClick={() => setLightbox(i)}
-                  className="clay-card overflow-hidden group w-full text-left"
+                  className="clay-card overflow-hidden group w-full text-left hover:translate-y-[-4px] transition-transform duration-300"
                 >
-                  <div className="aspect-[4/3] bg-secondary flex items-center justify-center text-muted-foreground font-body text-sm">
-                    <span className="text-center px-4">Gallery Image {i + 1}</span>
+                  <div className="aspect-[4/3] overflow-hidden">
+                    <img
+                      src={img.src}
+                      alt={img.alt}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      loading="lazy"
+                    />
                   </div>
                   <div className="p-4">
                     <p className="font-body text-xs text-muted-foreground">{img.caption}</p>
@@ -71,9 +85,11 @@ const Gallery = () => {
               className="clay-card max-w-3xl w-full overflow-hidden"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="aspect-[16/10] bg-secondary flex items-center justify-center text-muted-foreground font-body">
-                Gallery Image {lightbox + 1}
-              </div>
+              <img
+                src={galleryImages[lightbox].src}
+                alt={galleryImages[lightbox].alt}
+                className="w-full aspect-[16/10] object-cover"
+              />
               <div className="p-4 flex items-center justify-between">
                 <p className="font-body text-sm text-muted-foreground">{galleryImages[lightbox].caption}</p>
                 <button onClick={() => setLightbox(null)} className="p-2 hover:text-accent transition-colors">
