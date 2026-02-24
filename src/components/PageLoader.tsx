@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "@/assets/logo.png";
 
 const PageLoader = () => {
   const [loading, setLoading] = useState(true);
@@ -20,9 +19,9 @@ const PageLoader = () => {
         >
           <div className="flex flex-col items-center gap-6">
             <motion.img
-              src={logo}
+              src="https://cdn.builder.io/api/v1/image/assets%2F36956977346e4857a08b0a5b876a1b79%2Ffdde913ef95a4b81a334018214d08d4c?format=webp&width=800&height=1200"
               alt="HZ Details"
-              className="w-32 h-32 object-contain"
+              className="w-48 h-48 object-contain"
               initial={{ scale: 0.5, opacity: 0, rotateY: 90 }}
               animate={{ scale: 1, opacity: 1, rotateY: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
