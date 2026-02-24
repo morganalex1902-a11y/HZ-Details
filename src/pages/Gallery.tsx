@@ -3,24 +3,47 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 
-import gallery1 from "@/assets/gallery/gallery-1.jpg";
-import gallery2 from "@/assets/gallery/gallery-2.jpg";
-import gallery3 from "@/assets/gallery/gallery-3.jpg";
-import gallery4 from "@/assets/gallery/gallery-4.jpg";
-import gallery5 from "@/assets/gallery/gallery-5.jpg";
-import gallery6 from "@/assets/gallery/gallery-6.jpg";
-import gallery7 from "@/assets/gallery/gallery-7.jpg";
-import gallery8 from "@/assets/gallery/gallery-8.jpg";
-
 const galleryImages = [
-  { src: gallery1, caption: "Full exterior detail — hand polishing to a mirror finish", alt: "Full exterior auto detail Houston TX" },
-  { src: gallery2, caption: "Interior deep clean — pristine leather conditioning", alt: "Interior car detailing Houston" },
-  { src: gallery3, caption: "Ceramic coating application on a red sports car", alt: "Ceramic coating Houston TX" },
-  { src: gallery4, caption: "Paint correction — before & after swirl removal", alt: "Paint correction Houston TX" },
-  { src: gallery5, caption: "Premium wax application on white luxury SUV", alt: "Car waxing service Houston" },
-  { src: gallery6, caption: "Engine bay detailing — professional results", alt: "Engine detailing Houston TX" },
-  { src: gallery7, caption: "Before and after full paint restoration", alt: "Before after paint correction Houston" },
-  { src: gallery8, caption: "Leather interior restoration — like-new condition", alt: "Leather conditioning auto detail Houston" },
+  { 
+    src: "https://cdn.builder.io/api/v1/image/assets%2F65f7149b6e744edf9d649d7a825379d9%2F10e1f2694abb4a0dabfb8812173d4084?format=webp&width=600&height=400", 
+    caption: "Full exterior detail — professional hand polishing to a mirror finish", 
+    alt: "Full exterior auto detail Houston TX" 
+  },
+  { 
+    src: "https://cdn.builder.io/api/v1/image/assets%2F65f7149b6e744edf9d649d7a825379d9%2F78c01117a0cb47bfa9b2be17b8b4c7b6?format=webp&width=600&height=400", 
+    caption: "Interior deep clean — pristine leather conditioning and detailing", 
+    alt: "Interior car detailing Houston" 
+  },
+  { 
+    src: "https://cdn.builder.io/api/v1/image/assets%2F65f7149b6e744edf9d649d7a825379d9%2F553aae8d055e49fda00e26417bc3c33c?format=webp&width=600&height=400", 
+    caption: "Ceramic coating application — premium paint protection system", 
+    alt: "Ceramic coating Houston TX" 
+  },
+  { 
+    src: "https://cdn.builder.io/api/v1/image/assets%2F65f7149b6e744edf9d649d7a825379d9%2F4ef6a85c716d4b95a528a6b07b07f338?format=webp&width=600&height=400", 
+    caption: "Paint correction — before & after swirl removal and restoration", 
+    alt: "Paint correction Houston TX" 
+  },
+  { 
+    src: "https://cdn.builder.io/api/v1/image/assets%2F65f7149b6e744edf9d649d7a825379d9%2F0c39432d3fdd4664b2ad2263591c10ee?format=webp&width=600&height=400", 
+    caption: "Professional exterior wash — using premium products and safe techniques", 
+    alt: "Car washing service Houston" 
+  },
+  { 
+    src: "https://cdn.builder.io/api/v1/image/assets%2F65f7149b6e744edf9d649d7a825379d9%2F5a65e7400dd74ff28e811257373cf4dc?format=webp&width=600&height=400", 
+    caption: "Engine bay detailing — professional cleaning and protection", 
+    alt: "Engine detailing Houston TX" 
+  },
+  { 
+    src: "https://cdn.builder.io/api/v1/image/assets%2F65f7149b6e744edf9d649d7a825379d9%2F94c401dbe0e64481b1f94fdf7b936033?format=webp&width=600&height=400", 
+    caption: "Leather interior restoration — conditioning for like-new condition", 
+    alt: "Leather conditioning auto detail Houston" 
+  },
+  { 
+    src: "https://cdn.builder.io/api/v1/image/assets%2F65f7149b6e744edf9d649d7a825379d9%2F9001257ce48a49dfbb62cd63749e2025?format=webp&width=600&height=400", 
+    caption: "Close-up detailing — attention to every surface and crevice", 
+    alt: "Detail work Houston TX" 
+  },
 ];
 
 const Gallery = () => {
@@ -28,27 +51,27 @@ const Gallery = () => {
 
   return (
     <>
-      <section className="gradient-navy text-primary-foreground section-padding">
+      <section className="bg-gradient-to-r from-blue-700 to-blue-900 text-white section-padding">
         <div className="container-main">
           <ScrollReveal>
             <h1 className="font-heading text-4xl sm:text-5xl font-black mb-4">
-              Our Detailing Work in <span className="text-accent">Houston, TX</span>
+              Our Detailing <span className="text-blue-300">Portfolio</span>
             </h1>
-            <p className="font-body text-silver-light text-lg max-w-2xl">
-              Browse our portfolio of premium auto detailing results from Houston and surrounding areas.
+            <p className="font-body text-blue-100 text-lg max-w-2xl">
+              Browse our portfolio of premium auto detailing results from Houston and surrounding areas. See the transformations we create.
             </p>
           </ScrollReveal>
         </div>
       </section>
 
-      <section className="section-padding bg-background">
+      <section className="section-padding bg-gray-50">
         <div className="container-main">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {galleryImages.map((img, i) => (
               <ScrollReveal key={i} delay={i * 0.05}>
                 <button
                   onClick={() => setLightbox(i)}
-                  className="clay-card overflow-hidden group w-full text-left hover:translate-y-[-4px] transition-transform duration-300"
+                  className="overflow-hidden group w-full text-left hover:translate-y-[-4px] transition-transform duration-300 rounded-lg shadow-lg"
                 >
                   <div className="aspect-[4/3] overflow-hidden">
                     <img
@@ -58,8 +81,8 @@ const Gallery = () => {
                       loading="lazy"
                     />
                   </div>
-                  <div className="p-4">
-                    <p className="font-body text-xs text-muted-foreground">{img.caption}</p>
+                  <div className="p-4 bg-white">
+                    <p className="font-body text-sm text-gray-700">{img.caption}</p>
                   </div>
                 </button>
               </ScrollReveal>
@@ -75,14 +98,14 @@ const Gallery = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-foreground/80 backdrop-blur-md flex items-center justify-center p-4"
+            className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-md flex items-center justify-center p-4"
             onClick={() => setLightbox(null)}
           >
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="clay-card max-w-3xl w-full overflow-hidden"
+              className="max-w-3xl w-full overflow-hidden rounded-lg shadow-2xl bg-white"
               onClick={(e) => e.stopPropagation()}
             >
               <img
@@ -91,8 +114,8 @@ const Gallery = () => {
                 className="w-full aspect-[16/10] object-cover"
               />
               <div className="p-4 flex items-center justify-between">
-                <p className="font-body text-sm text-muted-foreground">{galleryImages[lightbox].caption}</p>
-                <button onClick={() => setLightbox(null)} className="p-2 hover:text-accent transition-colors">
+                <p className="font-body text-sm text-gray-700">{galleryImages[lightbox].caption}</p>
+                <button onClick={() => setLightbox(null)} className="p-2 hover:text-blue-600 transition-colors">
                   <X className="w-5 h-5" />
                 </button>
               </div>
