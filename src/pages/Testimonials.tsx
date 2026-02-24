@@ -19,7 +19,7 @@ const reviews = [
 
 const Testimonials = () => (
   <>
-    <section className="bg-gradient-to-r from-green-700 to-green-600 text-white section-padding">
+    <section className="bg-gradient-to-r from-blue-700 to-blue-600 text-white section-padding">
       <div className="container-main">
         <ScrollReveal>
           <h1 className="font-heading text-4xl sm:text-5xl font-black mb-4">
