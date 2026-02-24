@@ -7,7 +7,11 @@ const Footer = () => (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
         {/* Brand */}
         <div>
-          <h3 className="font-black text-2xl text-blue-500 mb-4">HZ Details</h3>
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets%2F36956977346e4857a08b0a5b876a1b79%2Ffdde913ef95a4b81a334018214d08d4c?format=webp&width=800&height=1200"
+            alt="HZ Details Logo"
+            className="h-28 w-auto mb-4"
+          />
           <p className="text-gray-400 text-sm font-body leading-relaxed">
             Premium auto detailing services in Houston, Texas. We bring showroom shine to your vehicle with precision, premium products, and personalized care.
           </p>

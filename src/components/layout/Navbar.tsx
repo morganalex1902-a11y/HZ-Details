@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
-import logo from "@/assets/logo.png";
 
 const navLinks = [
   { to: "/", label: "Home" },
@@ -50,8 +49,12 @@ const Navbar = () => {
         }`}
       >
         <div className="container-main flex items-center justify-between py-4 px-4">
-          <Link to="/" className="flex items-center gap-2">
-            <div className="font-black text-2xl text-blue-600">HZ Details</div>
+          <Link to="/" className="flex items-center gap-3">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2F36956977346e4857a08b0a5b876a1b79%2Ffdde913ef95a4b81a334018214d08d4c?format=webp&width=800&height=1200"
+              alt="HZ Details Logo"
+              className="h-20 w-auto"
+            />
             <div className="text-xs text-gray-600 hidden sm:block">Premium Auto Detailing</div>
           </Link>
 
@@ -105,7 +108,11 @@ const Navbar = () => {
             <button onClick={() => setMobileOpen(false)} className="self-end p-2" aria-label="Close menu">
               <X className="w-6 h-6 text-blue-700" />
             </button>
-            <div className="font-black text-2xl text-blue-600 text-center mb-4">HZ Details</div>
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2F36956977346e4857a08b0a5b876a1b79%2Ffdde913ef95a4b81a334018214d08d4c?format=webp&width=800&height=1200"
+              alt="HZ Details Logo"
+              className="h-24 w-auto mx-auto mb-4"
+            />
             {navLinks.map((l, i) => (
               <motion.div
                 key={l.to}
